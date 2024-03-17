@@ -238,3 +238,127 @@ index.html
 </html>
 
 style.css
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Стили для заголовков */
+h1, h2 {
+  background-color: blue;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Стили для основного текста */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Стили для ссылок */
+a {
+  color: #007bff; /* синий цвет */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Стили для изображения логотипа */
+#logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px; 
+  height: auto;
+}
+
+/* Дополнительные стили */
+section {
+  margin-bottom: 20px;
+}
+
+/* Медиа запросы */
+@media screen and (max-width: 600px) {
+  header {
+    padding: 5px;
+  }
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Стили для формы обратной связи */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 150px; /* Высота для textarea */
+}
+
+input[type="submit"] {
+  background-color: #007bff; /* Синий цвет для кнопки отправки */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3; /* Изменение цвета кнопки при наведении */
+}
