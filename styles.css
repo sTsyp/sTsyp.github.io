@@ -4,27 +4,33 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header {
   background-color: #333;
   color: #fff;
   padding: 10px;
 }
+
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+
 nav ul li {
   display: inline;
   margin-right: 20px;
 }
+
 nav ul li a {
   color: #fff;
   text-decoration: none;
 }
+
 main {
   padding: 20px;
 }
+
 footer {
   background-color: #333;
   color: #fff;
@@ -34,16 +40,51 @@ footer {
   width: 100%;
   text-align: center;
 }
+
 /* Стили для заголовков */
 h1, h2 {
   background-color: blue;
   color: #fff;
   padding: 10px;
 }
+
+/* Стили для основного текста */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Стили для ссылок */
+a {
+  color: #007bff; /* синий цвет */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Стили для изображения логотипа */
 #logo {
   position: absolute;
   top: 10px;
   right: 10px;
   width: 100px; 
   height: auto;
+}
+
+/* Дополнительные стили */
+section {
+  margin-bottom: 20px;
+}
+
+/* Медиа запросы */
+@media screen and (max-width: 600px) {
+  header {
+    padding: 5px;
+  }
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
 }
