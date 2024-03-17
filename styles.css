@@ -23,9 +23,10 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #fff;
+  color: red !important; /* Применяем !important к цвету ссылок */
   text-decoration: none;
 }
+
 
 main {
   padding: 20px;
