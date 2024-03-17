@@ -1,35 +1,41 @@
-/* Определение основных стилей */
-/* Заголовки */
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, main, footer {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, sans-serif;
   color: #333;
 }
 
-/* Параграфы */
 p {
   font-size: 16px;
   line-height: 1.5;
 }
 
-/* Ссылки */
 a {
-  color: #007bff; /* Синий цвет */
-  text-decoration: none; /* Убираем подчеркивание */
+  color: #007bff;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; /* Добавляем подчеркивание при наведении */
+  text-decoration: underline;
 }
 
-/* Формы */
 form {
   padding: 20px;
   border: 1px solid #ccc;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+input[type="text"], input[type="email"], textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -45,45 +51,24 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3; /* Темно-синий цвет при наведении */
+  background-color: #0056b3;
 }
 
-/* Списки */
 ul {
-  list-style-type: disc; /* Маркеры в виде кругов */
+  list-style-type: disc;
 }
 
 ol {
-  list-style-type: decimal; /* Нумерованные списки */
-}
-
-/* Общие стили */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Контейнеры */
-header, main, footer {
-  background-color: #f9f9f9;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-/* Стили для главной страницы */
-body.index {
-  background-color: #fff; /* Восстанавливаем фон страницы */
-}
-
-/* Эмблема */
-#logo {
-  max-width: 100px;
-  height: auto;
+  list-style-type: decimal;
 }
 
 /* Дополнительные стили */
 .special-text {
   font-weight: bold;
-  color: red !important; /* Красный цвет с применением !important */
+  color: red !important;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  /* Дополнительные стили для маленьких экранов */
 }
