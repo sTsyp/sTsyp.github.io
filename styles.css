@@ -1,17 +1,9 @@
-/* Общие стили */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9; /* Цвет фона страницы */
-  color: #333; /* Цвет текста */
-}
+/* Определение основных стилей */
 
 /* Заголовки */
 h1, h2, h3, h4, h5, h6 {
-  color: #333; /* Цвет текста */
   font-family: Arial, sans-serif;
-  margin-bottom: 10px; /* Добавляем небольшой отступ снизу */
+  color: #333;
 }
 
 /* Параграфы */
@@ -19,7 +11,6 @@ p {
   font-size: 16px;
   line-height: 1.5;
   color: #555; /* Цвет текста параграфов */
-  margin-bottom: 20px; /* Увеличиваем отступ снизу */
 }
 
 /* Ссылки */
@@ -68,6 +59,15 @@ ol {
   list-style-type: decimal; /* Нумерованные списки */
 }
 
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Цвет фона страницы */
+  color: #333; /* Цвет текста */
+}
+
 /* Контейнеры */
 header, main, footer {
   background-color: #fff;
@@ -85,25 +85,4 @@ header, main, footer {
 .special-text {
   font-weight: bold;
   color: red !important; /* Красный цвет с применением !important */
-}
-
-/* Flexbox */
-.container {
-  display: flex;
-  justify-content: space-between;
-}
-
-/* Позиционирование */
-.absolute {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-/* Media queries */
-@media screen and (max-width: 768px) {
-  /* Пример использования media query для адаптивного дизайна */
-  body {
-    font-size: 14px; /* Уменьшаем размер шрифта на маленьких экранах */
-  }
 }
