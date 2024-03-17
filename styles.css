@@ -41,11 +41,4 @@ h1, h2 {
   color: #fff;
   padding: 10px;
 }
-/* Стили для эмблемы */
-#logo {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 75px; 
-  height: auto;
-}
+
