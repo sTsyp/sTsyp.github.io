@@ -3,47 +3,107 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f9f9f9; /* Цвет фона страницы */
+  color: #333; /* Цвет текста */
 }
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+  color: #333; /* Цвет текста */
+  font-family: Arial, sans-serif;
+  margin-bottom: 10px; /* Добавляем небольшой отступ снизу */
 }
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+
+/* Параграфы */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555; /* Цвет текста параграфов */
+  margin-bottom: 20px; /* Увеличиваем отступ снизу */
 }
-nav ul li {
-  display: inline;
-  margin-right: 20px;
+
+/* Ссылки */
+a {
+  color: #007bff; /* Синий цвет */
+  text-decoration: none; /* Убираем подчеркивание */
 }
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
+
+a:hover {
+  text-decoration: underline; /* Добавляем подчеркивание при наведении */
 }
-main {
+
+/* Формы */
+form {
   padding: 20px;
+  border: 1px solid #ccc;
 }
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
+
+input[type="text"],
+input[type="email"],
+textarea {
   width: 100%;
-  text-align: center;
-}
-/* Стили для заголовков */
-h1, h2 {
-  background-color: blue;
-  color: #fff;
   padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
 }
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Темно-синий цвет при наведении */
+}
+
+/* Списки */
+ul {
+  list-style-type: disc; /* Маркеры в виде кругов */
+}
+
+ol {
+  list-style-type: decimal; /* Нумерованные списки */
+}
+
+/* Контейнеры */
+header, main, footer {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Эмблема */
 #logo {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Дополнительные стили */
+.special-text {
+  font-weight: bold;
+  color: red !important; /* Красный цвет с применением !important */
+}
+
+/* Flexbox */
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Позиционирование */
+.absolute {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 100px; 
-  height: auto;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  /* Пример использования media query для адаптивного дизайна */
+  body {
+    font-size: 14px; /* Уменьшаем размер шрифта на маленьких экранах */
+  }
 }
