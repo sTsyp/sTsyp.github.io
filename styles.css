@@ -58,11 +58,23 @@ ol {
   list-style-type: decimal; /* Нумерованные списки */
 }
 
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 /* Контейнеры */
 header, main, footer {
   background-color: #f9f9f9;
   padding: 20px;
   margin-bottom: 20px;
+}
+
+/* Стили для главной страницы */
+body.index {
+  background-color: #fff; /* Восстанавливаем фон страницы */
 }
 
 /* Эмблема */
