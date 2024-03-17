@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студент ВШЭ - Обратная связь</title>
+  <style>
+    /* Стили могут быть добавлены здесь или в отдельный файл CSS */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Я - студент ВШЭ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="feedback.html">Обратная связь</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Обратная связь</h2>
+      <p>Если у вас есть какие-либо вопросы, предложения или отзывы, пожалуйста, заполните форму ниже и отправьте их нам.</p>
+      <form action="submit_feedback.php" method="post">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Сообщение:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Я - студент ВШЭ. Все права защищены.</p>
+  </footer>
+</body>
+</html>
