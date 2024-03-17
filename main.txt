@@ -1,0 +1,143 @@
+styles.css
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+main {
+  padding: 20px;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+/* Стили для заголовков */
+h1, h2 {
+  background-color: blue;
+  color: #fff;
+  padding: 10px;
+}
+#logo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px; 
+  height: auto;
+}
+
+index.html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студент ВШЭ - Главная</title>
+  <link rel="stylesheet" type="text/css" href="styles.css?v=1">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Эмблема Высшей школы экономики" id="logo">
+    <h1>Я - студент ВШЭ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="feedback.html">Обратная связь</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Добро пожаловать!</h2>
+      <p>Я рад приветствовать вас на моей странице. Я студент Высшей школы экономики, Цыплаков Александр Александрович, и учусь на факультете "Московский институт Электроники и Математики", програмее "Прикладная Математика"</p>
+      <p>Здесь вы найдете информацию о моем университете, моих учебных достижениях и многом другом.</p>
+    </section>
+    
+    <section>
+      <h2>О Высшей школе экономики</h2>
+      <p>Высшая школа экономики - это крупнейшее российское учебное заведение, специализирующееся в области социальных и экономических наук.</p>
+      <p>Она известна своим высоким уровнем образования, качеством преподавания и академической атмосферой.</p>
+    </section>
+    <section>
+      <h2>Мои проекты</h2>
+      <p>Здесь вы можете узнать о некоторых моих проектах, над которыми я работал:</p>
+      <h3>1462 Разработка ПО для захвата движения человека и мимики лица</h3>
+      <p>Перейдя по этой <a href="https://wiki.miem.hse.ru/ru/Projects/1462">ссылке</a> вы сможете узнать все о данном проекте.</p>
+      <h3>Проект 2</h3>
+      <p>Проект находится на начальных этапах, поэтому информация о нем появится позже</p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Я - студент ВШЭ. Все права защищены.</p>
+  </footer>
+</body>
+</html>
+
+feedback.html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студент ВШЭ - Обратная связь</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Эмблема Высшей школы экономики" id="logo">
+    <h1>Я - студент ВШЭ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="feedback.html">Обратная связь</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Обратная связь</h2>
+      <p>Если у вас есть какие-либо вопросы, предложения или отзывы, пожалуйста, заполните форму ниже и отправьте их нам.</p>
+      <form action="submit_feedback.php" method="post">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Сообщение:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Я - студент ВШЭ. Все права защищены.</p>
+  </footer>
+</body>
+</html>
+
