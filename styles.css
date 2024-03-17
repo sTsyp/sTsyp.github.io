@@ -23,7 +23,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: red !important; /* Применяем !important к цвету ссылок */
+  color: blue !important; /* Применяем !important к цвету ссылок */
   text-decoration: none;
 }
 
