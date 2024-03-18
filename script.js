@@ -15,9 +15,30 @@ function initMap() {
 function initChat() {
   var chatToggle = document.getElementById('chat-toggle');
   var chatWindow = document.getElementById('chat-window');
+  var sendButton = document.getElementById('send-button');
+  var messageInput = document.getElementById('message-input');
+  var chatMessages = document.getElementById('chat-messages');
 
   chatToggle.addEventListener('click', function() {
     chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+    // Прокручиваем окно чата вниз, чтобы последние сообщения были видны
+    if (chatWindow.style.display === 'block') {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  });
+
+  sendButton.addEventListener('click', function() {
+    var message = messageInput.value;
+    if (message.trim() !== '') {
+      // Добавляем сообщение в окно чата
+      var messageElement = document.createElement('div');
+      messageElement.textContent = message;
+      chatMessages.appendChild(messageElement);
+      // Очищаем поле ввода
+      messageInput.value = '';
+      // Прокручиваем окно чата вниз после добавления нового сообщения
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
   });
 }
 
