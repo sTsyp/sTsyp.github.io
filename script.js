@@ -14,5 +14,18 @@ function initMap() {
 // Вызываем функцию инициализации карты при загрузке страницы
 window.onload = function() {
   initMap();
-  // Добавьте вызовы других функций или обработчиков событий здесь
+};
+function initChat() {
+  var chatToggle = document.getElementById('chat-toggle');
+  var chatWindow = document.getElementById('chat-window');
+
+  chatToggle.addEventListener('click', function() {
+    chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+  });
+}
+
+// Вызываем функции инициализации карты и чата при загрузке страницы
+window.onload = function() {
+  initMap();
+  initChat();
 };
