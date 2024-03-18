@@ -142,9 +142,6 @@ textarea {
   box-sizing: border-box;
 }
 
-textarea {
-  height: 150px; /* Высота для textarea */
-}
 
 input[type="submit"] {
   background-color: #007bff; /* Синий цвет для кнопки отправки */
