@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Студент ВШЭ - Главная</title>
   <link rel="stylesheet" type="text/css" href="styles.css?v=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
   <header>
@@ -32,8 +34,7 @@
     </section>
     <section>
       <h2>Как найти?</h2>
-      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9cbe9a15c73132db8a358289406846d40abe1e59d50edb2ac59402d42c0c54ed&amp;width=646&amp;height=645&amp;lang=ru_RU&amp;scroll=true"></script>
-    </section>
+      <div id="map" style="height: 400px;"></div>
     <section>
       <h2>Немного обо мне</h2>
       <p>Еще раз познакомимся, меня зовут Александр. На данный момент я учусь на 3 курсе программы "Прикладная математика".</p>
