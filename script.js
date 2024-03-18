@@ -56,6 +56,7 @@ function initChat() {
       // Создаем элемент для отображения сообщения пользователя и добавляем его в историю чата
       var userMessageElement = document.createElement('div');
       userMessageElement.textContent = '- ' + message;
+      userMessageElement.classList.add('user-message'); // Добавляем класс для стилизации сообщений пользователя
       chatMessages.appendChild(userMessageElement);
 
       // Отправляем ответ на сообщение пользователя
