@@ -6,7 +6,7 @@ function initMap() {
   }).addTo(map); // Добавляем слой с тайлами карты
   
   // Добавляем маркер на карту
-  L.marker([51.5, -0.09]).addTo(map)
+  L.marker([55.753636, 37.648297]).addTo(map)
     .bindPopup('Вы здесь!')
     .openPopup();
 }
