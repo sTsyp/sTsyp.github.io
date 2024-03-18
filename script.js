@@ -11,10 +11,7 @@ function initMap() {
     .openPopup();
 }
 
-// Вызываем функцию инициализации карты при загрузке страницы
-window.onload = function() {
-  initMap();
-};
+// Функция инициализации чата
 function initChat() {
   var chatToggle = document.getElementById('chat-toggle');
   var chatWindow = document.getElementById('chat-window');
@@ -28,12 +25,14 @@ function initChat() {
 window.onload = function() {
   initMap();
   initChat();
+
+  window.onscroll = function() {
+    var button = document.getElementById("chat-toggle");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      button.style.display = "none";
+    } else {
+      button.style.display = "block";
+    }
+  };
 };
-window.onscroll = function() {
-  var button = document.getElementById("chat-toggle");
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    button.style.display = "none";
-  } else {
-    button.style.display = "block";
-  }
-};
+
