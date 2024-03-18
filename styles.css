@@ -68,6 +68,7 @@ main {
   text-align: center; /* Центрируем текст */
   font-size: 1.2em; /* Устанавливаем размер шрифта */
   padding: 10px 0; /* Добавляем немного отступов сверху и снизу */
+  font-weight: bold;
 }
 #message-input {
   width: calc(100% - 20px); /* Ширина окна ввода текста */
