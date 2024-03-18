@@ -1,9 +1,9 @@
 // Функция инициализации карты
 function initMap() {
-  var map = L.map('map').setView([55.753636, 37.648297], 13); // Устанавливаем центр карты и масштаб
+  var map = L.map('map').setView([55.753636, 37.648297], 13); 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
-  }).addTo(map); // Добавляем слой с тайлами карты
+  }).addTo(map); 
   
   // Добавляем маркер на карту
   L.marker([55.753636, 37.648297]).addTo(map)
@@ -31,7 +31,7 @@ function initChat() {
   // Обработчик события для кнопки "Закрыть"
   closeButton.addEventListener('click', function() {
     chatWindow.style.display = 'none';
-    showChatButton(); // Показываем кнопку "Чат" при закрытии окна
+    showChatButton(); 
   });
   var sendButton = document.getElementById('send-button');
   var messageInput = document.getElementById('message-input');
@@ -39,10 +39,9 @@ function initChat() {
 
   chatToggle.addEventListener('click', function() {
     chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
-    // Прокручиваем окно чата вниз, чтобы последние сообщения были видны
     if (chatWindow.style.display === 'block') {
       chatMessages.scrollTop = chatMessages.scrollHeight;
-      messageInput.focus(); // Перемещаем фокус на поле ввода текста при открытии окна
+      messageInput.focus(); 
       hideChatButton(); // Скрываем кнопку "Чат" при открытии окна
     } else {
       showChatButton(); // Показываем кнопку "Чат" при закрытии окна
@@ -53,10 +52,9 @@ function initChat() {
     var message = messageInput.value.trim();
 
     if (message !== '') {
-      // Создаем элемент для отображения сообщения пользователя и добавляем его в историю чата
       var userMessageElement = document.createElement('div');
       userMessageElement.textContent = '- ' + message;
-      userMessageElement.classList.add('user-message'); // Добавляем класс для стилизации сообщений пользователя
+      userMessageElement.classList.add('user-message'); 
       chatMessages.appendChild(userMessageElement);
 
       // Отправляем ответ на сообщение пользователя
@@ -67,17 +65,14 @@ function initChat() {
         chatMessages.appendChild(responseElement);
       }
 
-      // Очищаем поле ввода после отправки сообщения
       messageInput.value = '';
 
-      // Прокручиваем окно чата вниз после добавления новых сообщений
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
   });
 }
 // Функция для получения ответа на сообщение пользователя
 function getResponse(message) {
-  // Определите ключевые слова и соответствующие ответы
   if (message.includes('привет')) {
     return "Привет! Как я могу помочь вам?";
   } else if (message.includes('Привет')) {
