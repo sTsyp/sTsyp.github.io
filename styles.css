@@ -65,12 +65,12 @@ p {
 /* Стили для ссылок */
 a {
   color: #007bff; /* синий цвет */
-  text-decoration: underline;
+  text-decoration: none;
 }
-/*
+
 a:hover {
-  text-decoration: underline; /* Подчеркивание при наведении 
-}*/
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
 
 /* Стили для изображения логотипа */
 #logo {
