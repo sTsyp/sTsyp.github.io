@@ -53,7 +53,7 @@ function initChat() {
     var message = messageInput.value;
     if (message.trim() !== '') {
       var messageElement = document.createElement('div');
-      messageElement.textContent = message;
+      messageElement.textContent = '-> ' + message;
       chatMessages.appendChild(messageElement);
       messageInput.value = '';
       chatMessages.scrollTop = chatMessages.scrollHeight;
