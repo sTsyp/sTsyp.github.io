@@ -45,7 +45,7 @@ footer {
 h1, h2 {
   background-color: blue;
   color: #fff;
-  padding: 10px;
+  padding: 30px;
 }
 
 /* Стили для основного текста */
@@ -67,9 +67,9 @@ a:hover {
 /* Стили для изображения логотипа */
 #logo {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
-  width: 100px; 
+  width: 75px; 
   height: auto;
 }
 
