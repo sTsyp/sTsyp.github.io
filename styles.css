@@ -64,6 +64,13 @@ main {
 .chat-message {
   margin-bottom: 10px; /* Отступ между сообщениями */
 }
+.user-message {
+    color: #555; /* Темно-серый цвет для сообщений пользователя */
+}
+
+.chat-message {
+    color: #000; /* Черный цвет для автоматических ответов */
+}
 #chat-title {
   text-align: center; /* Центрируем текст */
   font-size: 1.2em; /* Устанавливаем размер шрифта */
