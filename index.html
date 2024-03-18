@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Студент ВШЭ - Главная</title>
   <link rel="stylesheet" type="text/css" href="styles.css?v=1">
+  <!-- Подключаем библиотеку LeafletJS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
   <header>
@@ -38,11 +41,13 @@
       <h3>Проект 2</h3>
       <p>Проект находится на начальных этапах, поэтому информация о нем появится позже</p>
     </section>
+    <div id="map" style="height: 400px;"></div>
   </main>
-  
 
   <footer>
     <p>&copy; 2024 Я - студент ВШЭ. Все права защищены.</p>
   </footer>
+    <!-- Подключаем JavaScript файл с функциями и обработчиками событий -->
+  <script src="script.js"></script>
 </body>
 </html>
