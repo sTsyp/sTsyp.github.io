@@ -79,10 +79,14 @@ function getResponse(message) {
   // Определите ключевые слова и соответствующие ответы
   if (message.includes('привет')) {
     return "Привет! Как я могу помочь вам?";
-  } else if (message.includes('погода')) {
-    return "Сейчас в Москве +20°C и ясно.";
+  } else if (message.includes('Привет')) {
+    return "Привет! Что вам подсказать?";
+  } else if (message.includes('Добрый день')) {
+    return "Привет! Что вам подсказать?";
+  } else if (message.includes('добрый день')) {
+    return "Привет! Что вам подсказать?";
   } else {
-    return "Извините, я не понимаю ваш запрос.";
+    return "Извините, я еще не очень умный, поэтому на это ответить я не могу(((";
   }
 }
 
