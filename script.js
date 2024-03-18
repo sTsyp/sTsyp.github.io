@@ -7,7 +7,7 @@ function initMap() {
   
   // Добавляем маркер на карту
   L.marker([55.753636, 37.648297]).addTo(map)
-    .bindPopup('Вы здесь!')
+    .bindPopup('Мы здесь!')
     .openPopup();
 }
 
