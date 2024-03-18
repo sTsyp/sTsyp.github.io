@@ -11,10 +11,18 @@ function initMap() {
     .openPopup();
 }
 
-// Функция инициализации чата
 function initChat() {
   var chatToggle = document.getElementById('chat-toggle');
   var chatWindow = document.getElementById('chat-window');
+  var closeButton = document.createElement('button'); // Создаем кнопку "Закрыть"
+  closeButton.textContent = 'Закрыть'; // Устанавливаем текст кнопки
+  chatWindow.appendChild(closeButton); // Добавляем кнопку "Закрыть" в диалоговое окно
+
+  // Добавляем обработчик события для кнопки "Закрыть"
+  closeButton.addEventListener('click', function() {
+    chatWindow.style.display = 'none'; // Скрываем диалоговое окно
+  });
+
   var sendButton = document.getElementById('send-button');
   var messageInput = document.getElementById('message-input');
   var chatMessages = document.getElementById('chat-messages');
@@ -24,6 +32,7 @@ function initChat() {
     // Прокручиваем окно чата вниз, чтобы последние сообщения были видны
     if (chatWindow.style.display === 'block') {
       chatMessages.scrollTop = chatMessages.scrollHeight;
+      messageInput.focus(); // Перемещаем фокус на поле ввода текста при открытии окна
     }
   });
 
@@ -41,6 +50,7 @@ function initChat() {
     }
   });
 }
+
 
 // Переменная для хранения таймаута скрытия кнопки
 var timeout;
