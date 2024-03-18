@@ -42,10 +42,15 @@ footer {
 }
 
 /* Стили для заголовков */
-h1, h2 {
+h1 {
   background-color: blue;
   color: #fff;
   padding: 30px;
+}
+h2 {
+  background-color: blue;
+  color: #fff;
+  padding: 10px;
 }
 
 /* Стили для основного текста */
