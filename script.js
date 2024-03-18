@@ -14,13 +14,24 @@ function initMap() {
 function initChat() {
   var chatToggle = document.getElementById('chat-toggle');
   var chatWindow = document.getElementById('chat-window');
-  var closeButton = document.createElement('button'); // Создаем кнопку "Закрыть"
-  closeButton.textContent = 'Закрыть'; // Устанавливаем текст кнопки
-  chatWindow.appendChild(closeButton); // Добавляем кнопку "Закрыть" в диалоговое окно
+  var closeButton = document.createElement('button');
+  closeButton.textContent = 'Закрыть';
+  chatWindow.appendChild(closeButton);
 
-  // Добавляем обработчик события для кнопки "Закрыть"
+  // Функция для скрытия кнопки "Чат"
+  function hideChatButton() {
+    chatToggle.style.display = 'none';
+  }
+
+  // Функция для отображения кнопки "Чат"
+  function showChatButton() {
+    chatToggle.style.display = 'block';
+  }
+
+  // Обработчик события для кнопки "Закрыть"
   closeButton.addEventListener('click', function() {
-    chatWindow.style.display = 'none'; // Скрываем диалоговое окно
+    chatWindow.style.display = 'none';
+    showChatButton(); // Показываем кнопку "Чат" при закрытии окна
   });
 
   var sendButton = document.getElementById('send-button');
@@ -33,23 +44,24 @@ function initChat() {
     if (chatWindow.style.display === 'block') {
       chatMessages.scrollTop = chatMessages.scrollHeight;
       messageInput.focus(); // Перемещаем фокус на поле ввода текста при открытии окна
+      hideChatButton(); // Скрываем кнопку "Чат" при открытии окна
+    } else {
+      showChatButton(); // Показываем кнопку "Чат" при закрытии окна
     }
   });
 
   sendButton.addEventListener('click', function() {
     var message = messageInput.value;
     if (message.trim() !== '') {
-      // Добавляем сообщение в окно чата
       var messageElement = document.createElement('div');
       messageElement.textContent = message;
       chatMessages.insertBefore(messageElement, chatMessages.firstChild);
-      // Очищаем поле ввода
       messageInput.value = '';
-      // Прокручиваем окно чата вниз после добавления нового сообщения
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
   });
 }
+
 
 
 // Переменная для хранения таймаута скрытия кнопки
