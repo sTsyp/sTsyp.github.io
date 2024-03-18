@@ -29,13 +29,14 @@ nav ul li a {
 
 main {
   padding: 20px;
+  margin-bottom: 400px;
 }
 
 footer {
   background-color: #333;
   color: #fff;
   padding: 10px;
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   text-align: center;
