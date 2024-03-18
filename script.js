@@ -33,7 +33,7 @@ function initChat() {
       // Добавляем сообщение в окно чата
       var messageElement = document.createElement('div');
       messageElement.textContent = message;
-      chatMessages.appendChild(messageElement);
+      chatMessages.insertBefore(messageElement, chatMessages.firstChild);
       // Очищаем поле ввода
       messageInput.value = '';
       // Прокручиваем окно чата вниз после добавления нового сообщения
