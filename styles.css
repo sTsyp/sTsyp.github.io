@@ -35,15 +35,14 @@ main {
 /*  стили для чата */
 #chat-window {
   position: fixed;
-  bottom: 20px; /* Регулируйте отступ снизу, чтобы чат не перекрывался другим содержимым */
-  right: 20px; /* Регулируйте отступ справа, чтобы чат был прикреплен к правому краю страницы */
-  width: 300px; /* Задайте ширину чата */
-  /*height: 400px;  Задайте высоту чата */
-  background-color: #fff; /* Цвет фона чата */
-  border: 1px solid #ccc; /* Обводка чата */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень чата */
-  z-index: 9999; /* Установите z-index, чтобы чат был поверх остального содержимого */
-  overflow-y: auto; /* Включите вертикальную прокрутку, если содержимое чата превышает высоту */
+  bottom: 20px; 
+  right: 20px;
+  width: 300px;
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  z-index: 9999; 
+  overflow-y: auto; 
 }
 
 #chat-toggle {
@@ -52,38 +51,38 @@ main {
   right: 20px;
   z-index: 10000;
   border-radius: 5px;
-  width: 100px; /* Увеличиваем ширину кнопки в полтора раза */
-  height: 45px; /* Задаем высоту кнопки */
-  font-size: 1.1em; /* Увеличиваем размер шрифта */
+  width: 100px; 
+  height: 45px; 
+  font-size: 1.1em; 
 }
 
 #chat-messages {
-  height: 200px; /* Высота окна сообщений */
-  overflow-y: auto; /* Включение прокрутки при необходимости */
+  height: 200px; 
+  overflow-y: auto; 
 }
 .chat-message {
-  margin-bottom: 10px; /* Отступ между сообщениями */
+  margin-bottom: 10px; 
 }
 .user-message {
-    color: #555; /* Темно-серый цвет для сообщений пользователя */
+    color: #555; 
 }
 
 .chat-message {
-    color: #000; /* Черный цвет для автоматических ответов */
+    color: #000;
 }
 #chat-title {
-  text-align: center; /* Центрируем текст */
-  font-size: 1.2em; /* Устанавливаем размер шрифта */
-  padding: 10px 0; /* Добавляем немного отступов сверху и снизу */
+  text-align: center; 
+  font-size: 1.2em; 
+  padding: 10px 0; 
   font-weight: bold;
 }
 #message-input {
-  width: calc(100% - 20px); /* Ширина окна ввода текста */
-  margin: 0 10px 10px; /* Отступ снизу и слева, отступ справа */
-  resize: none; /* Запрет на изменение размера textarea пользователем */
+  width: calc(100% - 20px); 
+  margin: 0 10px 10px; 
+  resize: none;
 }
 #send-button {
-  margin: 5px 10px; /* Отступы сверху и снизу, отступ справа и слева */
+  margin: 5px 10px;
 }
 
 footer {
@@ -116,12 +115,12 @@ p {
 
 /* Стили для ссылок */
 a {
-  color: #007bff; /* синий цвет */
+  color: #007bff;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; /* Подчеркивание при наведении */
+  text-decoration: underline;
 }
 
 /* Стили для изображения логотипа */
