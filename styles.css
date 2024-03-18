@@ -31,7 +31,12 @@ main {
   padding: 20px;
   margin-bottom: 400px;
 }
-
+#chat-toggle {
+  position: fixed;
+  bottom: 20px; /* Расстояние от нижнего края страницы */
+  right: 20px; /* Расстояние от правого края страницы */
+  z-index: 9999; /* Чтобы кнопка была поверх остального контента */
+}
 footer {
   background-color: #333;
   color: #fff;
