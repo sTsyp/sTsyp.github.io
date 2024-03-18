@@ -63,6 +63,7 @@ var timeout;
 
 // Функция, вызываемая при прокрутке страницы
 window.onscroll = function() {
+  if(chatWindow.style.display == 'none') {
   var button = document.getElementById("chat-toggle");
   // Скрываем кнопку при прокрутке
   button.style.display = "none";
@@ -70,7 +71,7 @@ window.onscroll = function() {
   clearTimeout(timeout);
   timeout = setTimeout(function() {
     button.style.display = "block";
-  }, 250);
+  }, 250);}
 };
 
 // Вызываем функции инициализации карты и чата при загрузке страницы
