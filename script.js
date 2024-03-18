@@ -1,6 +1,6 @@
 // Функция инициализации карты
 function initMap() {
-  var map = L.map('map').setView([51.505, -0.09], 13); // Устанавливаем центр карты и масштаб
+  var map = L.map('map').setView([55.753636, 37.648297], 13); // Устанавливаем центр карты и масштаб
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map); // Добавляем слой с тайлами карты
