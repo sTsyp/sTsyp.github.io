@@ -53,7 +53,7 @@ function initChat() {
 
     if (message !== '') {
       var userMessageElement = document.createElement('div');
-      userMessageElement.textContent = '- ' + message;
+      userMessageElement.textContent = '<< ' + message;
       userMessageElement.classList.add('user-message'); 
       chatMessages.appendChild(userMessageElement);
 
@@ -61,7 +61,7 @@ function initChat() {
       var response = getResponse(message);
       if (response) {
         var responseElement = document.createElement('div');
-        responseElement.textContent = '- ' + response;
+        responseElement.textContent = '>> ' + response;
         chatMessages.appendChild(responseElement);
       }
 
