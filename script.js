@@ -50,34 +50,42 @@ function initChat() {
   });
 
   sendButton.addEventListener('click', function() {
-    var message = messageInput.value;
-    if (message.trim() !== '') {
-      var messageElement = document.createElement('div');
-      messageElement.textContent = '-> ' + message;
-      chatMessages.appendChild(messageElement);
+    var message = messageInput.value.trim();
+
+    if (message !== '') {
+      // Создаем элемент для отображения сообщения пользователя и добавляем его в историю чата
+      var userMessageElement = document.createElement('div');
+      userMessageElement.textContent = '- ' + message;
+      chatMessages.appendChild(userMessageElement);
+
+      // Отправляем ответ на сообщение пользователя
+      var response = getResponse(message);
+      if (response) {
+        var responseElement = document.createElement('div');
+        responseElement.textContent = '- ' + response;
+        chatMessages.appendChild(responseElement);
+      }
+
+      // Очищаем поле ввода после отправки сообщения
       messageInput.value = '';
+
+      // Прокручиваем окно чата вниз после добавления новых сообщений
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
   });
 }
+// Функция для получения ответа на сообщение пользователя
+function getResponse(message) {
+  // Определите ключевые слова и соответствующие ответы
+  if (message.includes('привет')) {
+    return "Привет! Как я могу помочь вам?";
+  } else if (message.includes('погода')) {
+    return "Сейчас в Москве +20°C и ясно.";
+  } else {
+    return "Извините, я не понимаю ваш запрос.";
+  }
+}
 
-
-
-// Переменная для хранения таймаута скрытия кнопки
-var timeout;
-
-// Функция, вызываемая при прокрутке страницы
-window.onscroll = function() {
-  
-  var button = document.getElementById("chat-toggle");
-  // Скрываем кнопку при прокрутке
-  if(chatWindow.style.display == 'none') {button.style.display = "none";}
-  // Если кнопка не видна, запускаем таймер для ее отображения через некоторое время после остановки прокрутки
-  clearTimeout(timeout);
-  timeout = setTimeout(function() {
-    button.style.display = "block";
-  }, 250);
-};
 
 // Вызываем функции инициализации карты и чата при загрузке страницы
 window.onload = function() {
