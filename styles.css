@@ -45,7 +45,7 @@ footer {
 h1 {
   background-color: blue;
   color: #fff;
-  padding: 30px;
+  padding: 20px;
   width: 100%;
 }
 h2 {
@@ -74,7 +74,7 @@ a:hover {
 /* Стили для изображения логотипа */
 #logo {
   position: absolute;
-  top: 15px;
+  top: 30px;
   right: 10px;
   width: 75px; 
   height: auto;
