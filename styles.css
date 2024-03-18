@@ -51,6 +51,7 @@ main {
   bottom: 20px;
   right: 20px;
   z-index: 10000;
+  border-radius: 5px;
   width: 150px; /* Увеличиваем ширину кнопки в полтора раза */
   height: 50px; /* Задаем высоту кнопки */
   font-size: 1.2em; /* Увеличиваем размер шрифта */
