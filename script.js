@@ -29,3 +29,11 @@ window.onload = function() {
   initMap();
   initChat();
 };
+window.onscroll = function() {
+  var button = document.getElementById("chat-toggle");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    button.style.display = "none";
+  } else {
+    button.style.display = "block";
+  }
+};
