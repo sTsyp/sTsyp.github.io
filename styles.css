@@ -61,6 +61,9 @@ main {
   height: 200px; /* Высота окна сообщений */
   overflow-y: auto; /* Включение прокрутки при необходимости */
 }
+.chat-message {
+  margin-bottom: 10px; /* Отступ между сообщениями */
+}
 #chat-title {
   text-align: center; /* Центрируем текст */
   font-size: 1.2em; /* Устанавливаем размер шрифта */
