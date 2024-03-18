@@ -21,18 +21,23 @@ function initChat() {
   });
 }
 
+// Переменная для хранения таймаута скрытия кнопки
+var timeout;
+
+// Функция, вызываемая при прокрутке страницы
+window.onscroll = function() {
+  var button = document.getElementById("chat-toggle");
+  // Скрываем кнопку при прокрутке
+  button.style.display = "none";
+  // Если кнопка не видна, запускаем таймер для ее отображения через некоторое время после остановки прокрутки
+  clearTimeout(timeout);
+  timeout = setTimeout(function() {
+    button.style.display = "block";
+  }, 250);
+};
+
 // Вызываем функции инициализации карты и чата при загрузке страницы
 window.onload = function() {
   initMap();
   initChat();
-
-  window.onscroll = function() {
-    var button = document.getElementById("chat-toggle");
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      button.style.display = "none";
-    } else {
-      button.style.display = "block";
-    }
-  };
 };
-
