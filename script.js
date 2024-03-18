@@ -14,26 +14,20 @@ function initMap() {
 function initChat() {
   var chatToggle = document.getElementById('chat-toggle');
   var chatWindow = document.getElementById('chat-window');
+  
+  chatToggle.addEventListener('click', function() {
+    chatWindow.style.display = 'block';
+    chatToggle.style.display = 'none'; // Скрываем кнопку "Чат" при открытии диалогового окна
+  });
+
   var closeButton = document.createElement('button');
   closeButton.textContent = 'Закрыть';
   chatWindow.appendChild(closeButton);
 
-  // Функция для скрытия кнопки "Чат"
-  function hideChatButton() {
-    chatToggle.style.display = 'none';
-  }
-
-  // Функция для отображения кнопки "Чат"
-  function showChatButton() {
-    chatToggle.style.display = 'block';
-  }
-
-  // Обработчик события для кнопки "Закрыть"
   closeButton.addEventListener('click', function() {
     chatWindow.style.display = 'none';
-    showChatButton(); // Показываем кнопку "Чат" при закрытии окна
+    chatToggle.style.display = 'block'; // Показываем кнопку "Чат" при закрытии диалогового окна
   });
-
   var sendButton = document.getElementById('send-button');
   var messageInput = document.getElementById('message-input');
   var chatMessages = document.getElementById('chat-messages');
