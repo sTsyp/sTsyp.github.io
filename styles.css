@@ -64,19 +64,19 @@ p {
 /* Стили для ссылок */
 a {
   color: #007bff; /* синий цвет */
-  text-decoration: none;
+  text-decoration: underline;
 }
-
+/*
 a:hover {
-  text-decoration: underline; /* Подчеркивание при наведении */
-}
+  text-decoration: underline; /* Подчеркивание при наведении 
+}*/
 
 /* Стили для изображения логотипа */
 #logo {
   position: absolute;
   top: 30px;
   right: 10px;
-  width: 100px; 
+  width: 75px; 
   height: auto;
 }
 
