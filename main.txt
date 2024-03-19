@@ -362,3 +362,398 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #0056b3; /* Изменение цвета кнопки при наведении */
 }
+
+ДОМАШНЯЯ РАБОТА №3
+feedback.html
+<!-- ДЗ_3 --> 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студент ВШЭ - Обратная связь</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Эмблема Высшей школы экономики" id="logo">
+    <h1>Я - студент ВШЭ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="feedback.html">Обратная связь</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Обратная связь</h2>
+      <p>Если у вас есть какие-либо вопросы, предложения или отзывы, пожалуйста, заполните форму ниже и отправьте их нам.</p>
+      <form action="submit_feedback.php" method="post">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Сообщение:</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Я - студент ВШЭ. Все права защищены.</p>
+  </footer>
+</body>
+</html>
+
+
+index.html
+<!-- ДЗ_3 --> 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студент ВШЭ - Главная</title>
+  <link rel="stylesheet" type="text/css" href="styles.css?v=1">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <button id="chat-toggle">Чат</button>
+  <header>
+    <img src="logo.png" alt="Эмблема Высшей школы экономики" id="logo">
+    <h1>Я - студент ВШЭ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="feedback.html">Обратная связь</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section>
+      <h2>Добро пожаловать!</h2>
+      <p>Я рад приветствовать вас на моей странице. Я студент Высшей школы экономики - Цыплаков Александр Александрович.</p>
+      <p>Здесь вы найдете информацию о моем университете, моих учебных достижениях и многом другом.</p>
+    </section>
+    
+    <section>
+      <h2>О Вышке</h2>
+      <p>Высшая школа экономики - это крупнейшее российское учебное заведение, специализирующееся в области социальных и экономических наук.</p>
+      <p>Она известна своим высоким уровнем образования, качеством преподавания и академической атмосферой.</p>
+    </section>
+    <section>
+      <h2>Как найти?</h2>
+      <div id="map" style="height: 400px;"></div>
+    </section>
+    <section>
+      <h2>Немного обо мне</h2>
+      <p>Еще раз познакомимся, меня зовут Александр. На данный момент я учусь на 3 курсе программы "Прикладная математика".</p>
+      <p>Далее вы сможете узнать о моих учебных проектах.</p>
+    </section>
+    <section>
+      <h2>Мои проекты</h2>
+      <p>Здесь вы можете узнать о некоторых моих проектах, над которыми я работал:</p>
+      <h3>1462 Разработка ПО для захвата движения человека и мимики лица</h3>
+      <p>Перейдя по этой <a href="https://wiki.miem.hse.ru/ru/Projects/1462">ссылке</a> вы сможете узнать все о данном проекте.</p>
+      <h3>Проект 2</h3>
+      <p>Проект находится на начальных этапах, поэтому информация о нем появится позже</p>
+    </section>
+  </main>
+  <div id="chat-window" style="display: none;">
+    <div id="chat-title">Виртуальный чат</div>
+    <div id="chat-messages"></div>
+    <textarea id="message-input" rows="3" cols="50"></textarea><br>
+    <button id="send-button">Отправить</button>
+    
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Я - студент ВШЭ. Все права защищены.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js
+// ДЗ_3 
+// Функция инициализации карты
+function initMap() {
+  var map = L.map('map').setView([55.753636, 37.648297], 13); 
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map); 
+  
+  // Добавляем маркер на карту
+  L.marker([55.753636, 37.648297]).addTo(map)
+    .bindPopup('Мы здесь!')
+    .openPopup();
+}
+
+function initChat() {
+  var chatToggle = document.getElementById('chat-toggle');
+  var chatWindow = document.getElementById('chat-window');
+  var closeButton = document.createElement('button');
+  closeButton.textContent = 'Закрыть';
+  chatWindow.appendChild(closeButton);
+
+  // Функция для скрытия кнопки "Чат"
+  function hideChatButton() {
+    chatToggle.style.display = 'none';
+  }
+
+  // Функция для отображения кнопки "Чат"
+  function showChatButton() {
+    chatToggle.style.display = 'block';
+  }
+
+  // Обработчик события для кнопки "Закрыть"
+  closeButton.addEventListener('click', function() {
+    chatWindow.style.display = 'none';
+    showChatButton(); 
+  });
+  var sendButton = document.getElementById('send-button');
+  var messageInput = document.getElementById('message-input');
+  var chatMessages = document.getElementById('chat-messages');
+
+  chatToggle.addEventListener('click', function() {
+    chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+    if (chatWindow.style.display === 'block') {
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      messageInput.focus(); 
+      hideChatButton(); // Скрываем кнопку "Чат" при открытии окна
+    } else {
+      showChatButton(); // Показываем кнопку "Чат" при закрытии окна
+    }
+  });
+
+  sendButton.addEventListener('click', function() {
+    var message = messageInput.value.trim();
+
+    if (message !== '') {
+      var userMessageElement = document.createElement('div');
+      userMessageElement.textContent = '<< ' + message;
+      userMessageElement.classList.add('user-message'); 
+      chatMessages.appendChild(userMessageElement);
+
+      // Отправляем ответ на сообщение пользователя
+      var response = getResponse(message);
+      if (response) {
+        var responseElement = document.createElement('div');
+        responseElement.textContent = '>> ' + response;
+        chatMessages.appendChild(responseElement);
+      }
+
+      messageInput.value = '';
+
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  });
+}
+// Функция для получения ответа на сообщение пользователя
+function getResponse(message) {
+  if (message.includes('привет')) {
+    return "Привет! Как я могу помочь вам?";
+  } else if (message.includes('Привет')) {
+    return "Привет! Что вам подсказать?";
+  } else if (message.includes('Добрый день')) {
+    return "Привет! Что вам подсказать?";
+  } else if (message.includes('добрый день')) {
+    return "Привет! Что вам подсказать?";
+  } else {
+    return "Извините, я еще не очень умный, поэтому не могу на это ответить(((";
+  }
+}
+
+
+// Вызываем функции инициализации карты и чата при загрузке страницы
+window.onload = function() {
+  initMap();
+  initChat();
+};
+
+styles.css
+/* ДЗ_3 */ 
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+  margin-bottom: 400px;
+}
+/*  стили для чата */
+#chat-window {
+  position: fixed;
+  bottom: 20px; 
+  right: 20px;
+  width: 300px;
+  background-color: #fff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  z-index: 9999; 
+  overflow-y: auto; 
+}
+
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  border-radius: 5px;
+  width: 100px; 
+  height: 45px; 
+  font-size: 1.1em; 
+}
+
+#chat-messages {
+  height: 200px; 
+  overflow-y: auto; 
+}
+.chat-message {
+  margin-bottom: 10px; 
+}
+.user-message {
+    color: #555; 
+}
+
+.chat-message {
+    color: #000;
+}
+#chat-title {
+  text-align: center; 
+  font-size: 1.2em; 
+  padding: 10px 0; 
+  font-weight: bold;
+}
+#message-input {
+  width: calc(100% - 20px); 
+  margin: 0 10px 10px; 
+  resize: none;
+}
+#send-button {
+  margin: 5px 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Стили для заголовков */
+h1 {
+  background-color: blue;
+  color: #fff;
+  padding: 20px;
+}
+h2 {
+  background-color: blue;
+  color: #fff;
+  padding: 10px;
+}
+
+/* Стили для основного текста */
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Стили для ссылок */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Стили для изображения логотипа */
+#logo {
+  position: absolute;
+  top: 31.5px;
+  right: 8px;
+  width: 74px; 
+  height: auto;
+}
+
+/* Дополнительные стили */
+section {
+  margin-bottom: 20px;
+}
+
+/* Медиа запросы */
+@media screen and (max-width: 600px) {
+  header {
+    padding: 5px;
+  }
+  nav ul li {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/* Стили для формы обратной связи */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+input[type="submit"] {
+  background-color: #007bff; /* Синий цвет для кнопки отправки */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3; /* Изменение цвета кнопки при наведении */
+}
